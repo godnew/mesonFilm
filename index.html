@@ -2,11 +2,40 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="style/Reset.css"/>
+    <link rel="stylesheet" href="style/CommonPC.css"/>
+    <link rel="stylesheet" href="style/index.css"/>
     <title></title>
 </head>
 <body>
-    <header>
-
+    <header class="fix">
+        <img src="images/bg-logo.png" alt="logo" class="l"/>
+        <ul class="header-ul">
+            <li class="header-active"><a href="#">FILM</a><span></span></li>
+            <li><a href="#">SERVICE</a><span></span></li>
+            <li><a href="#">EDUCATION</a><span></span></li>
+            <li><a href="#">DIARY</a><span></span></li>
+            <li><a href="#">CONNECT</a><span></span></li>
+        </ul>
     </header>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".header-ul").find('li').hover(function(){
+                $(this).find("span").stop(true,true).animate({'width':'100%'},500);
+            },function(){
+                if(!$(this).hasClass("header-active")) {
+                    $(this).find("span").stop(true, true).animate({'width': '0%'}, 500);
+                }
+            });
+            $(".header-ul").children("li").each(function(){
+                if($(this).hasClass("header-active")){
+                    $(this).find("span").css({'width':'100%'});
+                }
+            });
+        });
+    </script>
 </body>
 </html>
