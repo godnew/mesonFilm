@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="style/Reset.css"/>
     <link rel="stylesheet" href="style/CommonPC.css"/>
-    <link rel="stylesheet" href="style/index.css"/>
+    <link rel="stylesheet" href="style/connect.css"/>
     <link rel="stylesheet" href="style/Header.css"/>
     <title></title>
 </head>
@@ -17,18 +17,25 @@
             <li><a href="#">SERVICE</a><span></span></li>
             <li><a href="#">EDUCATION</a><span></span></li>
             <li><a href="#">DIARY</a><span></span></li>
-            <li><a href="#">CONNECT</a><span></span></li>
+            <li class="header-active"><a href="#">CONNECT</a><span></span></li>
         </ul>
     </header>
-    <div id="container">
-        <ul id="content">
-            <li><a href="#">FILM</a></li>
-            <li><a href="#">SERVICE</a></li>
-            <li><a href="#">EDUCATION</a></li>
-            <li><a href="#">DIARY</a></li>
-        </ul>
+    <div id="container" class="fix">
+        <img src="images/Diary_bg.jpg" alt=""/>
+        <article>
+            <h1 class="wh">CONNECT</h1>
+            <p>地址：上海市松江谷阳南路28弄9号903</p>
+            <p>国内用户客服热线：400-6846-520</p>
+            <p>国际用户客服热线：+86-21-67618189</p>
+            <p>工作时间：周一至周日09:00-12:00；13:00-18:00</p>
+            <p>到访客户请提前致电预约</p>
+            <p>QQ： 702182862</p>
+            <p>E-mail：MESONFILM@QQ.COM</p>
+            <p>微信：MESONFILM</p>
+            <p>微博：美臣电影</p>
+            <footer>沪ICP备14001097号</footer>
+        </article>
     </div>
-
     <script src="js/jquery-1.9.1.min.js"></script>
     <script>
         $(".header-ul").find('li').hover(function(){
@@ -46,20 +53,13 @@
         $(function(){
             var w=parseInt(document.body.clientHeight)-100;
             $("#container").height(w);
-            (function(){
-                $("#content").css({
-                    position: "absolute",
-                    left: ($("#container").width() - $("#content").width())/2,
-                    top: ($("#container").height() - $("#content").height())/2
-                });
-            })();
+            $("#container>img").height(w);
+            $("#container>img").width(1.3*w);
             $(window).resize(function(){
                 var w=parseInt(document.body.clientHeight)-100;
                 $("#container").height(w);
-                $("#content").css({
-                    position: "absolute",
-                    top: ($("#container").height() - $("#content").height())/2
-                });
+                $("#container>img").height(w);
+                $("#container>img").width(1.3*w);
             });
         });
     </script>

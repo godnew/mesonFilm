@@ -24,6 +24,7 @@
 #message{
     float: left;
     background: #121212;
+    position: relative;
 }
 #message>ul>li{
     height: 100%;
