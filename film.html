@@ -225,10 +225,15 @@
                 $("#message").height(w);
                 $("#message>ul").height(w/3);
                 $("#message>ul>li").width(2*w/3);
+                $("#container").width($("#container-logo").width()+$("#message").width()+2);
+                console.log($("#container-logo").width()+$("#message").width());
+                console.log($("#message").width());
+                console.log($("#container-logo").width());
             }
             changeSize();
             $(window).resize(function(){
                 changeSize();
+                $("#container").width($("#container-logo").width()+$("#message").width()+2);
             });
             $("#message>ul>li").hover(function(){
                 $(this).find(".share").stop(true,true).animate({bottom:0},300,"linear");
